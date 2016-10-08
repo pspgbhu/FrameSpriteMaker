@@ -1,0 +1,25 @@
+{
+  "name": "fsm",
+  "version": "0.1.0",
+  "description": "FrameSpriteMaker",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pspgbhu/FrameSpriteMaker.git"
+  },
+  "keywords": [
+    "fsm"
+  ],
+  "author": "pspgbhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pspgbhu/FrameSpriteMaker/issues"
+  },
+  "homepage": "https://github.com/pspgbhu/FrameSpriteMaker#readme",
+  "dependencies": {
+    "koa": "^1.2.4"
+  }
+}
