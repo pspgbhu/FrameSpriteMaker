@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/pspgbhu/FrameSpriteMaker#readme",
   "dependencies": {
-    "koa": "^1.2.4"
+    
   }
 }

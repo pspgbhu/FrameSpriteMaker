@@ -1,8 +1,11 @@
-var koa = require('koa');
-var app = koa();
+var express = require('express');
+var ejs = require('ejs');
 
-function* generator() {
-  console.log('first!')
-}
-var g = generator();
-generator().next();
+var app = express();
+
+app.set('views', path.join(_dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.get('/', function (req, res) {
+  res.render('index');
+})
