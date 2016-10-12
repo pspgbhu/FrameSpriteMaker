@@ -5,10 +5,10 @@ var path = require('path');
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'views')));
 
-app.get('/', function (req, res) {
+app.get('/fsm', function (req, res) {
   res.render('index');
 })
 
