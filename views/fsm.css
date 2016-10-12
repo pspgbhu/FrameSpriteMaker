@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
+    flex-wrap: wrap;
 }
 .container-input input{
     margin: 0 20px;
