@@ -7,26 +7,23 @@ window.onload = function () {
       input   = $('.input'),
       img     = $('.img');
 
-  var width   = 0,
-      heigth  = 0,
-      x       = 0,
-      y       = 0,
-      length  = 0,
-      n       = 0,
-      src     = new Array(),
-      images  = new Array();
+  var width   = 0,// 单张图片宽度
+      heigth  = 0,// 单张图片高度
+      src     = [],// 储存本地图片url
+      images  = [];
 
-  // 获取单张图片高度
-  $('#imgWidth').addEventListener('change',function () {
-    width = this.value;
-    console.log(width);
-  },false)
 
-  // 获取单张图片高度
-  $('#imgHeight').addEventListener('change',function () {
-    height = this.value;
-    console.log(height);
-  },false)
+  // // 获取单张图片高度
+  // $('#imgWidth').addEventListener('change',function () {
+  //   width = this.value;
+  //   console.log(width);
+  // },false)
+  //
+  // // 获取单张图片高度
+  // $('#imgHeight').addEventListener('change',function () {
+  //   height = this.value;
+  //   console.log(height);
+  // },false)
 
   // 获取图片url
   input.addEventListener('change',readerSrc,false);
@@ -47,28 +44,42 @@ window.onload = function () {
   }
 
   function readerSrc() {
-    var fileList = this.files;
-    length = fileList.length;
-    console.log(length);
-    for(var i = 0; i < fileList.length; i++){
-      src[i] = window.URL.createObjectURL(fileList[i]);
+    var fileList = [];
+    for (var i in this.files){
+      fileList[i] = this
+    }
+    fileList.forEach(function (value, i, array) {
+      src[i] = window.URL.createObjectURL(value);
       images[i] = new Image();
       images[i].src = src[i];
+      images[i].onload = function () {
+        console.log(this);
+        // this = {
+        //   oname: i,
+        //   osize: fileList[0].size,
+        //   owidth: images[0].naturalWdith,
+        //   oheight: images[0].naturalHeight,
+        // };
+      }
+    })
+    for(var i = 0; i < fileList.length; i++){
+    }
+    images[0].onload = function () {
+      width = this.naturalWidth;
+      height = this.naturalHeight;
+      $('.infor').innerText = '单张图片宽度为：' + width + 'px || 单张图片高度为：' + height + 'px'
     }
   }
 
   function drawCanvas() {
-    if(n < images.length){
+    for(var n = 0; n < images.length; n++){
       var w = n % 10;
       var h = Math.floor(n / 10);
+      console.log(w + ',' + h);
       ctx = canvas.getContext('2d');
       ctx.drawImage(images[n], width*w, height *h);
-      console.log(w + ',' + h);
-      n++;
-      drawCanvas();
-    }else{
-      n = 0;
     }
+    n = 0;
   }
 
   function getStyle(obj, attr) {
