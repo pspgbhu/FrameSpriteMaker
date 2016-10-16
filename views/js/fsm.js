@@ -4,8 +4,7 @@ window.onload = function () {
   };
 
   var canvas  = $('#mycanvas'),
-      input   = $('.input'),
-      img     = $('.img');
+      input   = $('#upImg');
 
   var width   = 0,// 单张图片宽度
       heigth  = 0,// 单张图片高度
@@ -43,7 +42,7 @@ window.onload = function () {
     images[0].onload = function () {
       width = this.naturalWidth;
       height = this.naturalHeight;
-      $('.infor').innerText = '单张图片宽度为：' + width + 'px || 单张图片高度为：' + height + 'px'
+      $('#infor').innerText = '单张图片宽度为：' + width + 'px || 单张图片高度为：' + height + 'px'
     }
   }
 

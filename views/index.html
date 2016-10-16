@@ -4,40 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="fsm.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fsm.css">
     <title>FrameSpriteMaker</title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container" >
-        <div class="title">
+    <header>
+        <div class="wp header-container">
             <h1>逐帧动画雪碧图生成器</h1>
-            <h3>使用说明：</h3>
-            <p>在输入框中分别输入单张图片的宽高像素，将已经命名规范的逐帧图一次全部上传（再次上传会覆盖之前上传的内容）。点击生成图片，右键保存图片即可！</p>
-            <p>注意：上传的图片宽高应当一致</p>
-        </div>
-        <ul class="list">
-
-        </ul>
-        <div class="container-input">
-            <!-- <input id="imgWidth" type="text" placeholder="请输入单张图片像素宽度">
-            <input id="imgHeight" type="text" placeholder="请输入单张图片像素高度"> -->
-            <input type="file" multiple class="input">
-            <div class="infor">
-
+            <div class="header-right">
+                <a href="https://github.com/pspgbhu/FrameSpriteMaker">Github</a>
             </div>
         </div>
-        <div class="container-btn">
-            <button>生成图片</button>
-        </div>
-        <div class="img">
+    </header>
 
+    <div class="container wp clearfix">
+        <!-- 主显示区域 -->
+        <div class="main">
+            <div class="title">
+                <h3>使用说明：</h3>
+                <p>在输入框中分别输入单张图片的宽高像素，将已经命名规范的逐帧图一次全部上传（再次上传会覆盖之前上传的内容）。点击生成图片，右键保存图片即可！</p>
+                <p>注意：上传的图片宽高应当一致</p>
+            </div>
+            <div class="main-input">
+            </div>
+            <div class="main-btn">
+                <button>生成图片</button>
+            </div>
+            <div class="main-canvas">
+                <canvas id="mycanvas"></canvas>
+            </div>
         </div>
-        <div class="container-canvas">
-            <canvas id="mycanvas"></canvas>
+        <!-- 侧栏 -->
+        <div class="side">
+            <div  class="sidebar">
+                <div>
+                    <label class="upImg">
+                        上传图片
+                        <input id="upImg" class="input hide" type="file" multiple />
+                    </label>
+                </div>
+                <ul id="infor" class="infor">
+
+                </ul>
+            </div>
+
         </div>
     </div>
 
-    <script src="fsm.js"></script>
+    <footer></footer>
+
+<script src="js/fsm.js"></script>
 </body>
 </html>

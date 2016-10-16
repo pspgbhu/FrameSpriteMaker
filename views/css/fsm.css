@@ -1,0 +1,64 @@
+body{
+    background: url('../img/bg.jpg')repeat;
+        color:#333;
+}
+.wp{
+    max-width: 1280px;
+    margin: auto;
+}
+
+/*
+*  header
+*/
+
+h1{
+    font-size: 30px;
+    line-height: 50px;
+    display: inline-block;
+    color: #fff;
+}
+header{
+    background-color: #09c;
+    padding: 0 50px;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.header-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header-right a{
+    color:fff;
+}
+.header-right a:visited{
+    color: #fff;
+}
+
+
+/*
+*  容器
+*/
+
+.container{
+    padding-top: 50px;
+    display: flex;
+    max-width: 1280px;
+}
+
+/*
+*  主体
+*/
+.main{
+    flex:auto;
+}
+
+/*
+*  侧栏
+*/
+.sidebar{
+    flex:1 1 300px;
+}
