@@ -9,8 +9,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'views')));
 
-app.get('/fsm', function (req, res) {
+app.get('/', function (req, res) {
   res.render('index');
 })
 
-module.exports = app;
+// module.exports = app;

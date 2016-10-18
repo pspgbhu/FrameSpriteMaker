@@ -17,7 +17,7 @@
 
     <header>
         <div class="wp header-container">
-            <h1>逐帧动画雪碧图生成器</h1>
+            <h1><a href="https://github.com/pspgbhu/FrameSpriteMaker">逐帧动画雪碧图生成器</a></h1>
             <div class="header-right">
                 <a href="https://github.com/pspgbhu/FrameSpriteMaker">Github</a>
             </div>
@@ -28,31 +28,35 @@
         <!-- 主显示区域 -->
         <div class="main">
             <div class="title">
+                <h3>工具介绍：</h3>
+                <p>本工具可以将宽高像素相同的逐帧图一键生成为连续帧的雪碧图（如果宽高不相同，将会以第一张图的宽高像素作为基准）</p>
                 <h3>使用说明：</h3>
                 <p>在输入框中分别输入单张图片的宽高像素，将已经命名规范的逐帧图一次全部上传（再次上传会覆盖之前上传的内容）。点击生成图片，右键保存图片即可！</p>
                 <p>注意：上传的图片宽高应当一致</p>
             </div>
-            <div class="main-input">
-            </div>
-            <div class="main-btn">
-                <button>生成图片</button>
-            </div>
             <div class="main-canvas">
-                <canvas id="mycanvas"></canvas>
+                <canvas id="mycanvas" class="mycanvas hide"></canvas>
             </div>
         </div>
         <!-- 侧栏 -->
         <div class="side">
             <div  class="sidebar">
-                <div>
+                <div class="sidebar-item">
                     <label class="upImg">
                         上传图片
                         <input id="upImg" class="input hide" type="file" multiple />
                     </label>
                 </div>
-                <ul id="infor" class="infor">
+                <div class="sidebar-item">
+                    <ul id="infor" class="infor  hide">
 
-                </ul>
+                    </ul>
+                </div>
+                <div class="sidebar-item">
+                    <label id="makeImage" class="makeImage hide">
+                        生成雪碧图
+                    </label>
+                </div>
             </div>
 
         </div>
