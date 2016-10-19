@@ -6,7 +6,7 @@
 ##如何体验
 1. 克隆项目到本地，直接打开在浏览器打开index.html文件即可。
 2. 也可用node运行app.js,访问loaclhost:3000
-3. 在线体验链接：http://hc.7749.la/fsm
+3. 在线体验链接：https://pspgbhu.github.io/FrameSpriteMaker/
 
 
 ##使用说明
