@@ -89,10 +89,10 @@ header{
 }
 .sidebar-item{
     padding: 20px;
-    border-bottom: 1px dashed #aaa;
+
 }
-.sidebar-item + .sidebar-item{
-    border-bottom: none;
+.sidebar-item ~ .sidebar-item{
+    border-top: 1px dashed #aaa;
 }
 .upImg{
     display: flex;
@@ -113,4 +113,22 @@ header{
     background-color: #09c;
     color: #fff;
     cursor: pointer;
+}
+.input-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.input-item ~ .input-item{
+    padding-top: 10px;
+}
+.input-item label{
+    flex: none;
+}
+.input-item input{
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid #aaa;
+    background-color: #e9e9e9;
+    border-radius: 4px;
 }

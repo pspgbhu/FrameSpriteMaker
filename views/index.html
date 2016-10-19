@@ -47,13 +47,30 @@
                         <input id="upImg" class="input hide" type="file" multiple />
                     </label>
                 </div>
-                <div class="sidebar-item">
-                    <ul id="infor" class="infor  hide">
+                <div  id="infor-container" class="sidebar-item  hide">
+                    <ul id="infor" class="infor">
 
                     </ul>
                 </div>
-                <div class="sidebar-item">
-                    <label id="makeImage" class="makeImage hide">
+                <div id="settings-container" class="sidebar-item settings">
+                    <div class="input-item">
+                        <label>宽度：</label>
+                        <input id="input-width" type="text" placeholder="不填写则取默认值" />px
+                    </div>
+                    <div class="input-item">
+                        <label>高度：</label>
+                        <input id="input-height" type="text" placeholder="不填写则取默认值" />px
+                    </div>
+                    <div>
+                        暂不支持自定义比例
+                    </div>
+                    <!-- <div class="input-item">
+                        <label>保持比例：</label>
+                        <input id="input-ratio" type="checkbox" checked="checked" readonly="readonly" />
+                    </div> -->
+                </div>
+                <div id="make-container" class="sidebar-item hide">
+                    <label id="makeImage" class="makeImage">
                         生成雪碧图
                     </label>
                 </div>
