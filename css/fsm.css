@@ -1,0 +1,116 @@
+/*
+*
+*    Author: pspgbhu
+*    Github: https://github.com/pspgbhu/FrameSpriteMaker
+*
+*/
+
+
+body{
+    background: url('../img/bg.jpg')repeat;
+    color:#333;
+}
+.wp{
+    max-width: 1280px;
+    margin: auto;
+}
+
+/*
+*  header
+*/
+
+h1{
+    font-size: 30px;
+    line-height: 50px;
+    display: inline-block;
+}
+h1 a{
+    color: #fff;
+}
+h3{
+    font-size: 18px;
+}
+h3 ~ h3{
+    padding-top: 10px;
+}
+header{
+    background-color: #09c;
+    padding: 0 50px;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.header-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header-right a{
+    color:#fff;
+}
+
+
+/*
+*  容器
+*/
+
+.container{
+    padding-top: 50px;
+    display: flex;
+    max-width: 1280px;
+}
+
+/*
+*  主体
+*/
+.main{
+    flex:auto;
+}
+.mycanvas{
+    width: 100%;
+    border: 1px solid #aaa;
+}
+
+/*
+*  侧栏
+*/
+.side{
+    flex:0 0 300px;
+}
+.sidebar{
+    display: flex;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    min-height: 300px;
+    flex-direction: column;
+    background-color: #fff;
+}
+.sidebar-item{
+    padding: 20px;
+    border-bottom: 1px dashed #aaa;
+}
+.sidebar-item + .sidebar-item{
+    border-bottom: none;
+}
+.upImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #09c;
+    color: #fff;
+    cursor: pointer;
+}
+.makeImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #09c;
+    color: #fff;
+    cursor: pointer;
+}
