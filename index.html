@@ -32,7 +32,7 @@
                 <p>本工具可以将宽高像素相同的逐帧图一键生成为连续帧的雪碧图（如果宽高不相同，将会以第一张图的宽高像素作为基准）</p>
                 <h3>使用说明：</h3>
                 <p>在输入框中分别输入单张图片的宽高像素，将已经命名规范的逐帧图一次全部上传（再次上传会覆盖之前上传的内容）。点击生成图片，右键保存图片即可！</p>
-                <p>注意：上传的图片宽高应当一致</p>
+                <p class="tip">注意：上传的图片宽高应当一致</p>
             </div>
             <div class="main-canvas">
                 <canvas id="mycanvas" class="mycanvas hide"></canvas>
@@ -47,13 +47,32 @@
                         <input id="upImg" class="input hide" type="file" multiple />
                     </label>
                 </div>
-                <div class="sidebar-item">
-                    <ul id="infor" class="infor  hide">
+                <div  id="infor-container" class="sidebar-item  hide">
+                    <ul id="infor" class="infor">
 
                     </ul>
                 </div>
-                <div class="sidebar-item">
-                    <label id="makeImage" class="makeImage hide">
+                <div id="settings-container" class="sidebar-item settings">
+                    <div class="input-item">
+                        <label>宽度：</label>
+                        <input id="input-width" type="text" placeholder="不填写则取默认值" />px
+                    </div>
+                    <div class="input-item">
+                        <label>高度：</label>
+                        <input id="input-height" type="text" placeholder="不填写则取默认值" />px
+                    </div>
+                    <div  >
+                        <p class="tip">
+                          暂不支持自定义比例
+                        </p>
+                    </div>
+                    <!-- <div class="input-item">
+                        <label>保持比例：</label>
+                        <input id="input-ratio" type="checkbox" checked="checked" readonly="readonly" />
+                    </div> -->
+                </div>
+                <div id="make-container" class="sidebar-item hide">
+                    <label id="makeImage" class="makeImage">
                         生成雪碧图
                     </label>
                 </div>

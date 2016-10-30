@@ -15,20 +15,24 @@ window.onload = function () {
   // 获取图片url
   input.addEventListener('change',readerSrc,false);
 
-  // 点击生成图片
-  $('#makeImage').addEventListener('click',makeImage,false)
-
-  function makeImage() {
+  // settings of width
+  $('#input-width').oninput = function () {
     var line = src.length < 10 ? src.length: 10,
         row= Math.ceil(src.length / 10);
-    // 设置画布像素
-    canvas.width  = width * line;
-    canvas.height = height * row;
-    // 设置画布展现比例(该比例不影响最终生成图像结果)
-    canvas.style.height = parseInt($('.main-canvas').offsetWidth) * canvas.height / canvas.width + 'px';
-    // console.log(getStyle(canvas, 'width') + ',' + canvas.height + ', ' + canvas.width );
-    // 调用canvas绘制图像
-    drawCanvas();
+    if (this.value === '') {
+      $('#input-height').value = '';
+    }
+    $('#input-height').value = Math.round(this.value * (height * row) / (width * line) ) ;
+  }
+
+  // settings of height
+  $('#input-height').oninput = function () {
+    var line = src.length < 10 ? src.length: 10,
+        row= Math.ceil(src.length / 10);
+    if (this.value === '') {
+      $('#input-width').value = '';
+    }
+    $('#input-width').value = Math.round(this.value * (width * line) / (height * row)) ;
   }
 
   // 读取图片本地src
@@ -37,6 +41,10 @@ window.onload = function () {
     var fileList = this.files;// 图片文件对象集合
     // 重置信息栏
     infor.innerHTML = '';
+    // 重置设置栏
+    $('#input-height').value = '';
+    $('#input-width').value = '';
+    // 建立images对象数组
     for(var i = 0; i < fileList.length; i++){
       src[i] = window.URL.createObjectURL(fileList[i]);
       images[i] = new Image();
@@ -60,8 +68,29 @@ window.onload = function () {
       infor.innerHTML += '<li>雪碧图宽度：'+ (width * line) +'px</li>' +
                          '<li>雪碧图高度：'+ (height * row) +'px</li>';
     }
-    $('#makeImage').classList.remove('hide');
-    infor.classList.remove('hide');
+    $('#make-container').classList.remove('hide');
+    $('#infor-container').classList.remove('hide');
+  }
+
+  // 点击生成图片
+  $('#makeImage').addEventListener('click',makeImage,false)
+
+  function makeImage() {
+    var line = src.length < 10 ? src.length: 10,
+        row= Math.ceil(src.length / 10);
+    // 是否自定义像素
+    if($('#input-width').value && $('#input-height').value){
+      canvas.width = $('#input-width').value;
+      canvas.height = $('#input-height').value;
+    } else { // 使用默认像素
+      canvas.width  = width * line;
+      canvas.height = height * row;
+    }
+    // 设置画布展现比例(该比例不影响最终生成图像结果)
+    canvas.style.height = parseInt($('.main-canvas').offsetWidth) * canvas.height / canvas.width + 'px';
+    // console.log(getStyle(canvas, 'width') + ',' + canvas.height + ', ' + canvas.width );
+    // 调用canvas绘制图像
+    drawCanvas();
   }
 
   // canvas绘制图像
