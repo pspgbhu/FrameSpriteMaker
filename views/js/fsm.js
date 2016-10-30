@@ -15,27 +15,6 @@ window.onload = function () {
   // 获取图片url
   input.addEventListener('change',readerSrc,false);
 
-  // settings of width
-  $('#input-width').oninput = function () {
-    var line = src.length < 10 ? src.length: 10,
-        row= Math.ceil(src.length / 10);
-    if (this.value === '') {
-      $('#input-height').value = '';
-    }
-    $('#input-height').value = Math.round(this.value * (height * row) / (width * line) ) ;
-  }
-
-  // settings of height
-  $('#input-height').oninput = function () {
-    var line = src.length < 10 ? src.length: 10,
-        row= Math.ceil(src.length / 10);
-    if (this.value === '') {
-      $('#input-width').value = '';
-    }
-    $('#input-width').value = Math.round(this.value * (width * line) / (height * row)) ;
-  }
-
-  // 读取图片本地src
   function readerSrc() {
     var same = true; // 图片像素是否一致；
     var fileList = this.files;// 图片文件对象集合
@@ -58,18 +37,43 @@ window.onload = function () {
         };
       })(i);
     }
-    // 输出图片相关信息
+    showInfor() // show informations about image
+  }
+
+  // 输出图片相关信息
+  function showInfor() {
     images[0].onload = function () {
       width = this.naturalWidth;  // 单张图片宽度
       height = this.naturalHeight; // 单张图片高度
       var line = src.length < 10 ? src.length : 10, // 列数
-          row  = Math.ceil(src.length / 10); // 行数
+      row  = Math.ceil(src.length / 10); // 行数
       // 画布像素信息
       infor.innerHTML += '<li>雪碧图宽度：'+ (width * line) +'px</li>' +
-                         '<li>雪碧图高度：'+ (height * row) +'px</li>';
+      '<li>雪碧图高度：'+ (height * row) +'px</li>';
     }
-    $('#make-container').classList.remove('hide');
-    $('#infor-container').classList.remove('hide');
+    $('#make-container').classList.remove('hide');// show button of maker
+    $('#infor-container').classList.remove('hide');// show informations container
+    $('#settings-container').classList.remove('hide');// show settings container
+  }
+
+  // width of settings
+  $('#input-width').oninput = function () {
+    var line = src.length < 10 ? src.length: 10,
+        row= Math.ceil(src.length / 10);
+    if (this.value === '') {
+      $('#input-height').value = '';
+    }
+    $('#input-height').value = Math.round(this.value * (height * row) / (width * line) ) ;
+  }
+
+  // height of settings
+  $('#input-height').oninput = function () {
+    var line = src.length < 10 ? src.length: 10,
+        row= Math.ceil(src.length / 10);
+    if (this.value === '') {
+      $('#input-width').value = '';
+    }
+    $('#input-width').value = Math.round(this.value * (width * line) / (height * row)) ;
   }
 
   // 点击生成图片
