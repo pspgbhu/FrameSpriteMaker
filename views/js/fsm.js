@@ -3,6 +3,8 @@ window.onload = function () {
     return selector ? document.querySelector(selector) : selector;
   };
 
+  alert('page')
+
   var canvas  = $('#mycanvas'),
       input   = $('#upImg'),
       infor   = $('#infor');

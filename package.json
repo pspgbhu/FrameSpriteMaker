@@ -4,7 +4,7 @@
   "description": "FrameSpriteMaker",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "dev": "node app.js"
   },
   "repository": {
     "type": "git",
