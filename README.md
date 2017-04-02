@@ -1,17 +1,15 @@
-#逐帧动画雪碧图生成器 (FrameSpriteMaker)
+# 逐帧动画雪碧图生成器 (FrameSpriteMaker)
+ 
+> 目前项目已经用 Vue 重构，因此不在更新本代码库，最新源码更新在 [FSM-FrameSpriteMaker-Vue2] (https://github.com/pspgbhu/FSM-FrameSpriteMaker-Vue2) 项目中。
+## 介绍
 
-v1.0.0
-
-##介绍
 故名思议，用于一键生成逐帧动画的雪碧图，解放生产力。
 
-##如何体验
-1. 克隆项目到本地，直接打开在浏览器打开index.html文件即可。
-2. 也可用node运行app.js,访问loaclhost:3000
-3. 在线体验链接：https://pspgbhu.github.io/FrameSpriteMaker/
+## 如何体验
+在线体验链接：https://pspgbhu.github.io/FrameSpriteMaker/
 
 
-##使用说明
+## 使用说明
 请先将逐帧图按一定顺序命名，以保证逐帧图的连贯性。
 
 将已经命名规范的逐帧图一次全部上传（再次上传会覆盖之前上传的内容）。点击生成图片，右键保存图片即可！
