@@ -1,6 +1,6 @@
 # 逐帧动画雪碧图生成器 (FrameSpriteMaker)
  
-> 目前项目已经用 Vue 重构，因此不在更新本代码库，最新源码更新在 [FSM-FrameSpriteMaker-Vue2] (https://github.com/pspgbhu/FSM-FrameSpriteMaker-Vue2) 项目中。
+> 目前项目已经用 Vue 重构，因此不在更新本代码库，最新源码更新在 [FSM-FrameSpriteMaker-Vue2](https://github.com/pspgbhu/FSM-FrameSpriteMaker-Vue2) 项目中。
 ## 介绍
 
 故名思议，用于一键生成逐帧动画的雪碧图，解放生产力。
