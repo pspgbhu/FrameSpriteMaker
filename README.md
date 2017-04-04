@@ -6,7 +6,7 @@
 故名思议，用于一键生成逐帧动画的雪碧图，解放生产力。
 
 ## 如何体验
-在线体验链接：https://pspgbhu.github.io/FrameSpriteMaker/
+在线体验链接：https://pspgbhu.github.io/fsm
 
 
 ## 使用说明
